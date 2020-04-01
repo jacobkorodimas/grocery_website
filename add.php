@@ -36,7 +36,7 @@
         <label>Product name:</label>
         <input type = "text" name = "product_name" value = "<?php echo $newProductName ?>" autocomplete = "off">
         <label>Product price:</label>
-        <input type = "number" step="0.01" min="0" max="10" name = "price" value = "<?php echo $newProductPrice ?>" autocomplete = "off">
+        <input type = "number" step="0.01" name = "price" value = "<?php echo $newProductPrice ?>" autocomplete = "off">
         <label>Product country:</label>
         <input type = "text" name = "country" value = "<?php echo $newProductCountry ?>" autocomplete = "off">
 
