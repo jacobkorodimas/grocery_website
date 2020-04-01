@@ -1,0 +1,40 @@
+body {
+    color: beige;
+    text-align: center;
+    background-color: brown;
+}
+
+.groceriesDiv {
+    width: 600px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+}
+
+.groceryDiv {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    border: 2px solid beige;
+    border-radius: 25px;
+    color: brown;
+    background-color: beige;
+}
+
+p {
+    margin: 0px;
+}
+
+a:link,
+a:visited {
+    color: rgb(116, 116, 82);
+    text-decoration: none;
+
+}
+
+a:hover,
+a:active {
+    color: rgb(10, 10, 7);
+    text-decoration: underline;
+}
