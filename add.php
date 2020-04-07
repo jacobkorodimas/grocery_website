@@ -31,16 +31,32 @@
     <title>Grocery Website</title>
 </head>
 <body>
-    <!-- Input Form -->
-    <form action = "add.php" method = "POST">
-        <label>Product name:</label>
-        <input type = "text" name = "product_name" value = "<?php echo $newProductName ?>" autocomplete = "off">
-        <label>Product price:</label>
-        <input type = "number" step="0.01" name = "price" value = "<?php echo $newProductPrice ?>" autocomplete = "off">
-        <label>Product country:</label>
-        <input type = "text" name = "country" value = "<?php echo $newProductCountry ?>" autocomplete = "off">
 
-        <input type = "submit" name = "submit" value = "PRESS TO SUBMIT">
-    </form>
+    <!-- Input Form -->
+    <div style = 'width: 400px' class = 'mx-auto mt-5'>
+        <h1 class = 'lead'>NEW PRODUCT</h1>
+        <form action = "add.php" method = "POST">
+    
+            <div class = 'input-group mb-3'>
+                <input class="form-control" placeholder = 'Product name' type = "text" name = "product_name" value = "<?php echo $newProductName ?>" autocomplete = "off">
+            </div>
+            
+            <div class = 'input-group mb-3'>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                </div>
+                <input class="form-control" placeholder = 'Amount (to hundredth of a dollar)' type = "number" step="0.01" name = "price" value = "<?php echo $newProductPrice ?>" autocomplete = "off">
+            </div>
+            
+           
+            <div class = 'input-group mb-3'>
+                <input class="form-control" placeholder = 'Country of origin' type = "text" name = "country" value = "<?php echo $newProductCountry ?>" autocomplete = "off">
+            </div>
+            
+            <input class = 'btn btn-primary' type = "submit" name = "submit" value = "PRESS TO SUBMIT">
+
+        </form>
+    </div>
+
 </body>
 </html>

@@ -45,23 +45,23 @@
     <title>Grocery Website</title>
 </head>
 <body>
-<?php if($grocery_item): ?>
-		<!-- product name -->
-        <p><?php echo $grocery_item['product_name']; ?></p>
-        <!-- product price -->
-        <p>$<?php echo $grocery_item['price']; ?></p>
-        <!-- product country -->
-        <p><?php echo $grocery_item['country']; ?></p>
-		<a class="brand-text" href="edit.php?id=<?php echo $grocery_item['id'] ?>">click to edit</a>
+	<?php if($grocery_item): ?>
+			<!-- product name -->
+        	<p><?php echo $grocery_item['product_name']; ?></p>
+        	<!-- product price -->
+        	<p>$<?php echo $grocery_item['price']; ?></p>
+        	<!-- product country -->
+        	<p><?php echo $grocery_item['country']; ?></p>
+			<a class="brand-text" href="edit.php?id=<?php echo $grocery_item['id'] ?>">click to edit</a>
 
-		<!-- DELETE FORM -->
-		<form action="details.php" method="POST">
-			<input type="hidden" name="id_to_delete" value="<?php echo $grocery_item['id']; ?>">
-			<input type="submit" name="delete" value="Delete" class="btn brand z-depth-0">
-		</form>
+			<!-- DELETE FORM -->
+			<form action="details.php" method="POST">
+				<input type="hidden" name="id_to_delete" value="<?php echo $grocery_item['id']; ?>">
+				<input type="submit" name="delete" value="Delete" class="btn brand z-depth-0">
+			</form>
 
-	<?php else: ?>
-		<h5>This item does not exist.</h5>
-	<?php endif ?>
+		<?php else: ?>
+			<h5>This item does not exist.</h5>
+		<?php endif ?>
 </body>
 </html>
