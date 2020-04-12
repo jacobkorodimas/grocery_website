@@ -9,9 +9,9 @@
         //want to make sure inserted data is protected and check for correct data here
 
         //assign input to variables
-        $newProductName = mysqli_real_escape_string($conn, $_POST['product_name']);
+        $newProductName = ucfirst(mysqli_real_escape_string($conn, $_POST['product_name']));
 		$newProductPrice = mysqli_real_escape_string($conn, $_POST['price']);
-        $newProductCountry = mysqli_real_escape_string($conn, $_POST['country']);
+        $newProductCountry = ucfirst(mysqli_real_escape_string($conn, $_POST['country']));
         
         //create sql
         $sql = "INSERT INTO grocerytable(product_name, price, country) VALUES('$newProductName', '$newProductPrice', '$newProductCountry')";
@@ -53,7 +53,7 @@
                 <input class="form-control" placeholder = 'Country of origin' type = "text" name = "country" value = "<?php echo $newProductCountry ?>" autocomplete = "off">
             </div>
             
-            <input class = 'btn btn-primary' type = "submit" name = "submit" value = "PRESS TO SUBMIT">
+            <input class = 'btn btn-info' type = "submit" name = "submit" value = "PRESS TO SUBMIT">
 
         </form>
     </div>

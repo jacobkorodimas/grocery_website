@@ -46,19 +46,27 @@
 </head>
 <body>
 	<?php if($grocery_item): ?>
-			<!-- product name -->
-        	<p><?php echo $grocery_item['product_name']; ?></p>
-        	<!-- product price -->
-        	<p>$<?php echo $grocery_item['price']; ?></p>
-        	<!-- product country -->
-        	<p><?php echo $grocery_item['country']; ?></p>
-			<a class="brand-text" href="edit.php?id=<?php echo $grocery_item['id'] ?>">click to edit</a>
+		
+			<div class = 'mx-auto mt-5 col-3 border rounded-pill'>
+                <!-- product name -->
+                <p class = 'font-weight-bold text-monospace'><u><?php echo $grocery_item['product_name']; ?></u></p>
+                <!-- product price -->
+                <p class = 'text-info'>$<?php echo $grocery_item['price']; ?></p>
+                <!-- product country -->                    
+				<p class = 'text-info'><?php echo $grocery_item['country']; ?></p>
 
-			<!-- DELETE FORM -->
-			<form action="details.php" method="POST">
-				<input type="hidden" name="id_to_delete" value="<?php echo $grocery_item['id']; ?>">
-				<input type="submit" name="delete" value="Delete" class="btn brand z-depth-0">
-			</form>
+				<div class = 'row'>
+					<div class='col-4'></div>
+					<a class="col-2 btn btn-outline-info" href="edit.php?id=<?php echo $grocery_item['id'] ?>">EDIT</a>
+					<!-- DELETE FORM -->
+					<form class = 'col-2' action="details.php" method="POST">
+						<input type="hidden" name="id_to_delete" value="<?php echo $grocery_item['id']; ?>">
+						<input type="submit" name="delete" value="DELETE" class="btn btn-outline-warning">
+					</form>
+					<div class='col-4'></div>
+				</div>
+                
+			</div>
 
 		<?php else: ?>
 			<h5>This item does not exist.</h5>

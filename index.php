@@ -26,26 +26,61 @@
 </head>
 
 <body>
-    <h1 class = 'display-1'>Safe way Grocery Store</h1>
-    <!--Link to add new item  -->
-    <a class = 'lead border rounded-circle border-primary p-2' href="add.php">Add an item</a>
+    <h1 class = 'display-1 mb-4'>Safe way Grocery Store</h1>
+    
+    <div class = 'row'>
 
-    <h3 class = 'display-3'>Grocery Items:</h3>
+        <!-- Filler column -->
+        <div class = col-8></div>
+        
+        <!-- Dropdown menu -->
+        <div class="dropdown  col-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Product Details
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <?php foreach($groceries as $grocery_item): ?>
+                <a class="dropdown-item" href="details.php?id=<?php echo $grocery_item['id']; ?>">
+                    <?php echo $grocery_item['product_name']; ?> details
+                </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <!--Link to add new item  -->
+        <a class = 'col-1 btn btn-info'  href="add.php">Add an item</a>
+
+    </div>
+
+    <hr style = 'border: 3px solid black;'>
+
+    <h3 class = 'display-4'>Grocery Items:</h3>
 
     <!-- List Grocery Items -->
     <div class ='container'>
         <div class = 'row'>
-            <?php foreach($groceries as $grocery_item): ?>
-                <div class = 'col-4 mb-3 border border-primary rounded-pill'>
-                    <!-- product name -->
-                    <p class = 'display-4'><?php echo $grocery_item['product_name']; ?></p>
-                    <!-- product price -->
-                    <p class = lead>$<?php echo $grocery_item['price']; ?></p>
-                    <!-- product country -->
-                    <p><?php echo $grocery_item['country']; ?></p>
+            <!-- spacer div -->
+            <?php $rowNum = -1; ?>
 
-                    <a class = 'badge badge-secondary' href="details.php?id=<?php echo $grocery_item['id']; ?>">More Information</a>
+            <?php foreach($groceries as $grocery_item): ?>
+                
+                <?php $rowNum += 1;?>
+                <?php if($rowNum % 3 == 0): ?>
+                    <div class = 'col-0 m-5'></div>
+                <?php endif; ?>
+
+                <div class = 'mb-3 col-3 border rounded-pill'>
+                    <!-- product name -->
+                    <p class = 'font-weight-bold text-monospace'><u><?php echo $grocery_item['product_name']; ?></u></p>
+                    <!-- product price -->
+                    <p class = 'text-info'>$<?php echo $grocery_item['price']; ?></p>
+                    <!-- product country -->
+                    <p class = 'text-info'><?php echo $grocery_item['country']; ?></p>
+
+                    <a class = 'badge badge-info' href="details.php?id=<?php echo $grocery_item['id']; ?>">More Information</a>
                 </div>
+
+                <!-- spacer div -->
+                <div class = 'col-0 m-3'></div>
             <?php endforeach; ?> 
         </div>
     </div>
