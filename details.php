@@ -53,7 +53,9 @@
                 <!-- product price -->
                 <p class = 'text-info'>$<?php echo $grocery_item['price']; ?></p>
                 <!-- product country -->                    
-				<p class = 'text-info'><?php echo $grocery_item['country']; ?></p>
+				<p class = 'text-info'>From: <?php echo $grocery_item['country']; ?></p>
+				<!-- created at -->
+				<p class = 'text-muted font-weight-light'>Added At: <?php echo $grocery_item['created_at']; ?></p>
 
 				<div class = 'row'>
 					<div class='col-4'></div>
